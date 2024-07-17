@@ -11,7 +11,21 @@ ON M.PRODUCT_ID=S.PRODUCT_ID
 GROUP BY CUSTOMER_ID
 
 -- 2. How many days has each customer visited the restaurant?
+SELECT
+CUSTOMER_ID,COUNT(DISTINCT ORDER_DATE) VISITS
+FROM DANNYS_DINER.SALES
+GROUP BY CUSTOMER_ID;
+
 -- 3. What was the first item from the menu purchased by each customer?
+SELECT  T.CUSTOMER_ID, T.PRODUCT_NAME
+FROM
+(SELECT
+ROW_NUMBER() OVER(PARTITION BY S.CUSTOMER_ID ORDER BY ORDER_DATE) R,PRODUCT_NAME, CUSTOMER_ID
+FROM DANNYS_DINER.MENU M JOIN DANNYS_DINER.SALES S
+ON M.PRODUCT_ID=S.PRODUCT_ID
+) T
+WHERE T.R=1;
+
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 -- 5. Which item was the most popular for each customer?
 -- 6. Which item was purchased first by the customer after they became a member?
