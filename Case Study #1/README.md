@@ -10,6 +10,7 @@ Danny’s Diner is in need of your assistance to help the restaurant stay afloat
 <h4><h4>Questions and Solutions</h4></h4>
 
 <h5>1. What is the total amount each customer spent at the restaurant?</h5>
+
 ```sql
 SELECT 
 SUM(PRICE)TOTAL_AMOUNT,CUSTOMER_ID
@@ -19,6 +20,7 @@ GROUP BY CUSTOMER_ID
 ```
 
 <h5>2. How many days has each customer visited the restaurant?</h5>
+
 ```sql
 SELECT
 CUSTOMER_ID,COUNT(DISTINCT ORDER_DATE) VISITS
@@ -27,6 +29,7 @@ GROUP BY CUSTOMER_ID;
 ```
 
 <h5>3. What was the first item from the menu purchased by each customer?</h5>
+
 ```sql
 SELECT  T.CUSTOMER_ID, T.PRODUCT_NAME
 FROM
@@ -39,6 +42,7 @@ WHERE T.R=1;
 ```
 
 <h5>4. What is the most purchased item on the menu and how many times was it purchased by all customers?</h5>
+
 ```sql
 SELECT 
   	COUNT(*) CT,M.PRODUCT_NAME
@@ -54,6 +58,7 @@ LIMIT 1 ;
 <h5>5. Which item was the most popular for each customer?</h5>
 
 <h5>6. Which item was purchased first by the customer after they became a member?</h5>
+
 ```sql
 WITH CTE AS(
 SELECT
@@ -71,6 +76,7 @@ WHERE R=1;
 ```
 
 </h5>7. Which item was purchased just before the customer became a member?</h5>
+
 ```sql
 WITH CTE AS(
 SELECT
@@ -89,6 +95,7 @@ WHERE R=1;
 
 <h5>8. What is the total items and amount spent for each member before they became a member?
 What is the total items and amount spent for each member before they became a member?</h5>
+
 ```sql
 SELECT 
 COUNT(S.PRODUCT_ID)
@@ -107,6 +114,7 @@ GROUP BY S.CUSTOMER_ID;
 
 <h5>9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 </h5>
+
 ```sql
 SELECT
 CUSTOMER_ID,
