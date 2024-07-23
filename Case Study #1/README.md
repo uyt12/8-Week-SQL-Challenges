@@ -1,4 +1,4 @@
-<h1>Case Study-Danny's Diner #1</h1>
+<h1>Case Study #1 - Danny's Diner</h1>
 
 <h5> Link for the case study#1: https://8weeksqlchallenge.com/case-study-1/ </h5>
 
