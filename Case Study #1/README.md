@@ -19,6 +19,7 @@ GROUP BY CUSTOMER_ID
 ```
 
 <h5>2. How many days has each customer visited the restaurant?</h5>
+
 ```sql
 SELECT
 CUSTOMER_ID,COUNT(DISTINCT ORDER_DATE) VISITS
