@@ -18,6 +18,7 @@ FROM DANNYS_DINER.MENU M JOIN DANNYS_DINER.SALES S
 ON M.PRODUCT_ID=S.PRODUCT_ID
 GROUP BY CUSTOMER_ID;
 ```
+![Q1](Case Study #1/q1.png)
 
 <h5>2. How many days has each customer visited the restaurant?</h5>
 
